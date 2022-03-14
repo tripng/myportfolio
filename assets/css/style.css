@@ -65,7 +65,26 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
+.cursor{
+  position:absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  transition: .15s;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 20;
+}
+:is(
+    #services:hover~.cursor,
+    #faq:hover~.cursor,
+    #portfolio:hover~.cursor,
+    .footer:hover~.cursor
+    ) {
+    transform: scale(3);
+}
 hr {
   margin: 1rem 0;
   color: inherit;
